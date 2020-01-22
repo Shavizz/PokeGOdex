@@ -14,14 +14,12 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
+import com.example.PokeGOdex.Extras.ExtrasFragment;
 import com.example.PokeGOdex.controller.PokeClient;
 import com.example.PokeGOdex.controller.PokeapiService;
 import com.example.PokeGOdex.models.general.NameUrl;
 import com.example.PokeGOdex.models.pokemon.PokemonRespuesta;
-import com.example.PokeGOdex.Extras.ExtrasFragment;
-import java.io.File;
 
 import java.util.ArrayList;
 
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements ListaPokemonAdapt
     private Button jugarp;
 
     private int offset;
-//    private boolean aptoParaCargar;
+    //    private boolean aptoParaCargar;
     // private StoreFragment storeFragment;
     FragmentManager fragmentManager = getSupportFragmentManager();
     View view;
@@ -99,8 +97,8 @@ public class MainActivity extends AppCompatActivity implements ListaPokemonAdapt
             @Override
             public void onClick(View v) {
 
-                    Intent intent = new Intent(MainActivity.this, Principal.class);
-                    startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, Principal.class);
+                startActivity(intent);
             }
         });
 //        Método para cargar los datos de 20 en 20 cuando la llamada a service.obtenerListaPokemon tiene limit 20 y offset+=20

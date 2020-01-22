@@ -53,7 +53,7 @@ public class PokemonDB {
     ));
 
     public static int ADIVINADOS = 0;
-    public static int Jugar =0;
+
     public static int INTENTOS = 3;
     public static int NUMEROGENERADO = 0;
     private static boolean ACTIVATE_SOUND = true;
