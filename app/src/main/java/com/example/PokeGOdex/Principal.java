@@ -24,7 +24,7 @@ public class Principal extends AppCompatActivity {
         listapokemon = (Button) findViewById(R.id.btnlista);
         salir = (Button) findViewById(R.id.btnsalir);
         PokemonDB.cargarDatos(getApplicationContext());
-        reproductor = MediaPlayer.create(this, R.raw.musicafondo);
+        reproductor = MediaPlayer.create(this, R.raw.pokerap);
         reproductor.setLooping(true);
         reproductor.start();
 

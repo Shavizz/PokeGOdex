@@ -39,7 +39,7 @@ public class DatabaseAssist extends SQLiteOpenHelper {
         return res;
     }
 
-    // Validates the user exists in the database
+    // Validacion de los datos de los usuarios ya existentes
     public boolean validateUser(String username, String password) {
         String[] columns = {COL_1};
         SQLiteDatabase db = getReadableDatabase();

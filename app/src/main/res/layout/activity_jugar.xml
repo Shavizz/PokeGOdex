@@ -2,12 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".Principal"
-    android:background="@color/background">
+    android:background="@drawable/atrapalos">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -18,24 +16,26 @@
         android:layout_alignParentTop="false">
 
         <TextView
+            android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/textView4"
-            android:layout_toLeftOf="@+id/lblintentos"
+            android:layout_alignParentBottom="false"
             android:layout_toStartOf="@+id/lblintentos"
+            android:layout_toLeftOf="@+id/lblintentos"
             android:singleLine="false"
-            android:text="total_puntos"
-            android:layout_alignParentBottom="false" />
+            android:text="Total Intentos"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FDF5F2F2" />
 
         <TextView
+            android:id="@+id/lblintentos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="1000"
-            android:id="@+id/lblintentos"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#EEE4E4" />
     </RelativeLayout>
 
     <LinearLayout
@@ -43,14 +43,15 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/informacion"
         android:layout_above="@+id/Botones">
+
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="240dp"
             android:id="@+id/miimagen"
-            android:adjustViewBounds="true"
+            android:layout_width="227dp"
+            android:layout_height="201dp"
             android:layout_gravity="center_vertical"
-            android:scaleType="fitCenter"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter" />
     </LinearLayout>
 
     <LinearLayout

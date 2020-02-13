@@ -6,6 +6,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,6 +25,8 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
     SensorManager sensorManager;
     Sensor sensor;
     DatabaseAssist db;
+    private MediaPlayer reproductor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,10 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
         textView =(TextView) findViewById(R.id.textView2);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+
+        reproductor = MediaPlayer.create(this, R.raw.pikachu1);
+        //reproductor.setLooping(true);
+
 
 
         db = new DatabaseAssist(this);
@@ -51,6 +58,7 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
         mButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                reproductor.start();
                 String user = mTextUsername.getText().toString().trim();
                 String pwd = mTextPassword.getText().toString().trim();
                 Boolean res = db.validateUser(user, pwd);
@@ -64,6 +72,15 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
                 }
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (reproductor.isPlaying()) {
+            reproductor.stop();
+            reproductor.release();
+        }
     }
 
     @Override
@@ -90,4 +107,6 @@ public class LoginActivity extends AppCompatActivity implements SensorEventListe
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
+
 }
